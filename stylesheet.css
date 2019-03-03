@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 10px;
+  display: inline-block;
+}
+
+.canvas-container {
+  /* border: 1px solid black; */
+  float: left;
+  -webkit-box-shadow: 3px 0 5px -10px #888;
+            box-shadow: 3px 0 5px -10px #888;
+}
+
+.container > .label-container {
+  border: 1px solid black;
+  float: right;
+  margin-left: 16px;
+  height: 100%;
+}
+
+.container > .label-container pre {
+  font-size: 20px;
+}

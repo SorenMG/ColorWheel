@@ -18,6 +18,16 @@ function Cursor(context) {
     // this.draw();
   }
 
+  this.exceedsRect = function() {
+
+  }
+
+  this.exceedsCircle = function(cx, cy, x, y, radius) {
+    var dx = (x) - cx;
+    var dy = (y) - cy;
+    return dx*dx + dy*dy >= radius * radius // Use pythagoras equation to find distance
+  }
+
   this.contains = function(x, y) {
     if (this.x - this.radius < x && this.x + this.radius > x) {
       if (this.y - this.radius < y && this.y + this.radius > y) {
