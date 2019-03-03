@@ -11,11 +11,12 @@ function ColorWheel(context) {
     this.radius = radius;
     this.x = radius;
     this.y = radius;
-    this.draw();
 
     // Initialize cursor;
     this.cursor = new Cursor(context);
     this.cursor.move(this.radius, this.radius);
+
+    this.draw();
   }
 
   this.draw = function() {
@@ -32,5 +33,6 @@ function ColorWheel(context) {
       context.fillStyle = gradient;
       context.fill();
     }
+    this.cursor.draw();
   }
 }

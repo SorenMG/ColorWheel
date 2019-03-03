@@ -29,10 +29,15 @@ function onMouseMove() {
   if (mouseDown) {
     var x = event.clientX;
     var y = event.clientY;
-    colorWheel.draw();
     colorWheel.cursor.move(event.clientX, event.clientY);
-    // event.clientX
+    redraw();
   }
+}
+
+function redraw() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  colorWheel.draw();
+  shadePicker.draw();
 }
 
 init();

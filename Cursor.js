@@ -15,7 +15,7 @@ function Cursor(context) {
   this.move = function(x, y) {
     this.x = x;
     this.y = y;
-    this.draw();
+    // this.draw();
   }
 
   this.contains = function(x, y) {
