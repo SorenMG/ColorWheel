@@ -1,0 +1,25 @@
+{
+  "name": "colorpicker",
+  "version": "1.0.0",
+  "description": "Color Picker Application",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soren1146/ColorWheel.git"
+  },
+  "author": "Søren Møller Gade Hansen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soren1146/ColorWheel/issues"
+  },
+  "homepage": "https://github.com/soren1146/ColorWheel#readme",
+  "dependencies": {
+    "electron": "^4.0.6"
+  }
+}

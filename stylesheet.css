@@ -3,25 +3,38 @@
   padding: 0;
 }
 
+body {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+pre {
+  font-size: 20px;
+}
+
 .container {
-  margin: 10px;
   display: inline-block;
 }
 
 .canvas-container {
+}
+
+.container > .rgb-container {
   /* border: 1px solid black; */
-  float: left;
-  -webkit-box-shadow: 3px 0 5px -10px #888;
-            box-shadow: 3px 0 5px -10px #888;
+  margin-top: 10px;
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; /* switched from default (flex-start, see below) */
 }
 
-.container > .label-container {
-  border: 1px solid black;
-  float: right;
-  margin-left: 16px;
-  height: 100%;
+.container > .rgb-container pre {
+  display: inline-block;
+  width: 33.33%;
 }
 
-.container > .label-container pre {
-  font-size: 20px;
+.hex-container {
+  /* border: 1px solid black; */
+  margin-top: 10px;
 }

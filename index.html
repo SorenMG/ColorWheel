@@ -8,12 +8,15 @@
   <body>
     <div class="container">
       <div class="canvas-container">
-        <canvas id="picker" width="436" height="400"></canvas>
+        <canvas id="picker" width="400" height="400"></canvas>
       </div>
-      <div class="label-container">
+      <div class="rgb-container">
         <pre id="red">R: 0</pre>
-        <pre id="green">B: 0</pre>
-        <pre id="blue">G: 0</pre>
+        <pre id="green" style="text-align: center;">B: 0</pre>
+        <pre id="blue" style="text-align: right;">G: 0</pre>
+      </div>
+      <div class="hex-container">
+        <pre id="hex">Hex: </pre>
       </div>
     </div>
 
@@ -25,7 +28,7 @@
     <script type="text/javascript">
       var canvas = document.getElementById("picker");
       var colorWheel = new ColorWheel(canvas);
-      colorWheel.init();
+      colorWheel.init(false);
 
       // Gets called every time user chooses new color
       // 1. parameter: RGB object
@@ -33,6 +36,11 @@
       // 3. parameter: HSL object
       function colorDidChange(rgb, hex, hsl) {
         updateRGBLabels(rgb);
+        updateHexLabel(hex);
+      }
+
+      function updateHexLabel(hex) {
+        document.getElementById('hex').innerText = 'Hex: #' + hex;
       }
 
       function updateRGBLabels(rgb) {
