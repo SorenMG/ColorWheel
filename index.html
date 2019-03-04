@@ -14,20 +14,32 @@
         <pre id="red">R: 0</pre>
         <pre id="green">B: 0</pre>
         <pre id="blue">G: 0</pre>
-        <!-- <pre>Test</pre>
-        <pre>Test</pre> -->
       </div>
     </div>
 
     <!-- Color Picker Scripts -->
-    <script src="PickerFunctions.js"></script>
-    <script src="ShadeCursor.js"></script>
-    <script src="ShadePicker.js"></script>
-    <script src="Cursor.js"></script>
-    <script src="ColorWheel.js"></script>
-    <script src="colorPicker.js"></script>
+    <script src="lib/ColorWheel/HelperFunctions.js"></script>
+    <script src="lib/ColorWheel/ShadePicker.js"></script>
+    <script src="lib/ColorWheel/Cursor.js"></script>
+    <script src="lib/ColorWheel/ColorWheel.js"></script>
     <script type="text/javascript">
-      init(); // Initialize color wheel
+      var canvas = document.getElementById("picker");
+      var colorWheel = new ColorWheel(canvas);
+      colorWheel.init();
+
+      // Gets called every time user chooses new color
+      // 1. parameter: RGB object
+      // 2. parameter: HEX string
+      // 3. parameter: HSL object
+      function colorDidChange(rgb, hex, hsl) {
+        updateRGBLabels(rgb);
+      }
+
+      function updateRGBLabels(rgb) {
+        document.getElementById('red').innerText = 'R: ' + rgb.r;
+        document.getElementById('green').innerText = 'G: ' + rgb.g;
+        document.getElementById('blue').innerText = 'B: ' + rgb.b;
+      }
     </script>
   </body>
 </html>
