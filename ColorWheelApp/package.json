@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . --icon=Icon/Icon.icns --asar=true --overwrite"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/soren1146/ColorWheel#readme",
   "dependencies": {
     "electron": "^4.0.6"
+  },
+  "devDependencies": {
+    "electron-packager": "^13.1.1"
   }
 }

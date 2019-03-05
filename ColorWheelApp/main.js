@@ -8,12 +8,20 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 435,
-    height: 600,
+    width: 350,
+    height: 466,
+    resizable: false,
+    titleBarStyle: 'hiddenInset',
+    maximizable: false,
+    fullscreenable: false,
     webPreferences: {
       nodeIntegration: true
     }
   })
+
+  // mainWindow.setVibrancy('dark');
+
+  mainWindow.setMenuBarVisibility(false);
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')

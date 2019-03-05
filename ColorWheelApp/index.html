@@ -3,28 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Color Picker</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="master.css">
   </head>
-  <body>
+  <body style="-webkit-app-region: drag;">
+    <!-- Header -->
+    <header>
+      <h1 class="title">Color Wheel</h1>
+    </header>
+
+
+
     <div class="container">
       <div class="canvas-container">
-        <canvas id="picker" width="400" height="400"></canvas>
+        <canvas id="picker" width="300" height="300" style="-webkit-app-region: no-drag"></canvas>
       </div>
+
+      <div class="separator"></div>
+
       <div class="rgb-container">
         <pre id="red">R: 0</pre>
         <pre id="green" style="text-align: center;">B: 0</pre>
         <pre id="blue" style="text-align: right;">G: 0</pre>
       </div>
-      <div class="hex-container">
-        <pre id="hex">Hex: </pre>
+      <div class="color-shower"></div>
+      <div class="hex-container" id="hex-container">
+        <pre id="hex"></pre>
       </div>
     </div>
 
     <!-- Color Picker Scripts -->
-    <script src="lib/ColorWheel/HelperFunctions.js"></script>
-    <script src="lib/ColorWheel/ShadePicker.js"></script>
-    <script src="lib/ColorWheel/Cursor.js"></script>
-    <script src="lib/ColorWheel/ColorWheel.js"></script>
+    <script src="../lib/ColorWheel/HelperFunctions.js"></script>
+    <script src="../lib/ColorWheel/ShadePicker.js"></script>
+    <script src="../lib/ColorWheel/Cursor.js"></script>
+    <script src="../lib/ColorWheel/ColorWheel.js"></script>
     <script type="text/javascript">
       var canvas = document.getElementById("picker");
       var colorWheel = new ColorWheel(canvas);
@@ -40,7 +51,8 @@
       }
 
       function updateHexLabel(hex) {
-        document.getElementById('hex').innerText = 'Hex: #' + hex;
+        document.getElementById('hex-container').style.background = '#' + hex;
+        document.getElementById('hex').innerText = '#' + hex;
       }
 
       function updateRGBLabels(rgb) {
