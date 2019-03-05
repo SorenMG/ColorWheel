@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body style="-webkit-app-region: drag;">
+    <!-- Header -->
+    <header>
+      <h1 class="title">Color Picker</h1>
+    </header>
+
+
+
+    <div class="container">
+      <div class="canvas-container">
+        <canvas id="picker" width="300" height="300" style="-webkit-app-region: no-drag"></canvas>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="rgb-container">
+        <pre id="red">R: 0</pre>
+        <pre id="green" style="text-align: center;">B: 0</pre>
+        <pre id="blue" style="text-align: right;">G: 0</pre>
+      </div>
+      <div class="color-shower"></div>
+      <div class="hex-container" id="hex-container">
+        <pre id="hex"></pre>
+      </div>
+    </div>
+
+    <!-- Color Picker Scripts -->
+    <script src="lib/ColorWheel/HelperFunctions.js"></script>
+    <script src="lib/ColorWheel/ShadePicker.js"></script>
+    <script src="lib/ColorWheel/Cursor.js"></script>
+    <script src="lib/ColorWheel/ColorWheel.js"></script>
+    <script type="text/javascript">
+      var canvas = document.getElementById("picker");
+      var colorWheel = new ColorWheel(canvas);
+      colorWheel.init(false);
+
+      // Gets called every time user chooses new color
+      // 1. parameter: RGB object
+      // 2. parameter: HEX string
+      // 3. parameter: HSL object
+      function colorDidChange(rgb, hex, hsl) {
+        updateRGBLabels(rgb);
+        updateHexLabel(hex);
+      }
+
+      function updateHexLabel(hex) {
+        document.getElementById('hex-container').style.background = '#' + hex;
+        document.getElementById('hex').innerText = '#' + hex;
+      }
+
+      function updateRGBLabels(rgb) {
+        document.getElementById('red').innerText = 'R: ' + rgb.r;
+        document.getElementById('green').innerText = 'G: ' + rgb.g;
+        document.getElementById('blue').innerText = 'B: ' + rgb.b;
+      }
+    </script>
+  </body>
+</html>

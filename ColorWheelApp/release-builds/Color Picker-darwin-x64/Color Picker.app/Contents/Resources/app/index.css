@@ -1,0 +1,66 @@
+pre {
+  font-size: 20px;
+  -webkit-user-select: none;
+  cursor: default;
+}
+
+canvas {
+  cursor: pointer;
+  border-radius: 200px;
+}
+
+.separator {
+  background: #b2bec3;
+  height: 2px;
+  border-radius: 1px;
+  width: 90%;
+  margin: auto;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+.container {
+  /* display: inline-block; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-top: 4px;
+}
+
+.canvas-container {
+  -webkit-app-region: drag;
+}
+
+.container > .rgb-container {
+  /* border: 1px solid black; */
+  margin-top: 10px;
+  display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap;              /* default value; can be omitted */
+  justify-content: space-between; /* switched from default (flex-start, see below) */
+}
+
+.container > .rgb-container pre {
+  display: inline-block;
+  width: 33.33%;
+}
+
+.hex-container {
+  /* border: 1px solid black; */
+  margin: auto;
+  margin-top: 10px;
+  height: 50px;
+  width: 80px;
+  border-radius: 10px;
+  background: red;
+  text-align: center;
+  border: 1px solid #b2bec3;
+}
+
+.hex-container pre {
+  font-size: 16px;
+  line-height: 50px;
+  color: black;
+  font-weight: bold;
+  font-family: "montserrat", sans-serif;
+}
