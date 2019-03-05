@@ -16,7 +16,7 @@ In order to initialize the color wheel, create a new instance of it and call the
 ```javascript
 var canvas = document.getElementById('canvas');
 var colorWheel = new ColorWheel(canvas);
-colorWheel.init();
+colorWheel.init(false); // If true, the canvas intializes a shade picker
 ```
 To access the color values create a global variable called `colorDidChange`. This function has 3 parameters; RGB, HEX, HSL which is an object, a string, and an object respectively.
 ```javascript
