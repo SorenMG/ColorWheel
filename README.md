@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/soren1146/ColorWheel.svg?token=cCfBsyzDp3fa7FeSBA8M&branch=master)](https://travis-ci.com/soren1146/ColorWheel)
+
 # Color Wheel
 Color Wheel is a Javascript library to create a color wheel with a canvas element
 
