@@ -2,7 +2,7 @@
 Color Wheel is a Javascript library to create a color wheel with a canvas element
 
 ## Installation
-Copy the files from the library folder into your project.
+Copy the files from the `lib` folder into your project.
 
 ## Usage
 First you need to import all the files into your HTML file

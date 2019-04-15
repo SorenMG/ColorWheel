@@ -1,0 +1,9 @@
+{
+  "name": "ColorWheel",
+  "description": "Simple ColorWheel using the canvas element",
+  "author": "Søren Møller Gade Hansen",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "npm start"
+  }
+}
